@@ -12,6 +12,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
 import { ComponentListComponent } from './component-list/component-list.component';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,10 @@ export class ComponentListComponent implements OnInit {
   constructor(private customersService: CustomerService) { }
 
   ngOnInit() {
-     this.customerList = this.customersService.getAll();
+     // this.customerList = this.customersService.getAll();
+    this.customersService.getAll().subscribe( result => {
+      this.customerList = result;
+    });
   }
 
 }

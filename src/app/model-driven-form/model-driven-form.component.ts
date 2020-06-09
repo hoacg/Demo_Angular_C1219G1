@@ -26,8 +26,13 @@ export class ModelDrivenFormComponent {
 
 
   obSubmit() {
-    this.customersService.add(this.userForm.value);
-    this.userForm.reset();
+    // this.customersService.add(this.userForm.value);
+
+    this.customersService.add(this.userForm.value).subscribe( result => {
+      this.userForm.reset();
+    }, error => {
+      alert('Xử lý thất bại');
+    });
   }
 
 }
